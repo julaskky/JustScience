@@ -1,0 +1,56 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Environment variables and credentials
+.env
+.env.*
+!.env.example
+
+# Local databases
+*.sqlite
+*.sqlite3
+*.db
+
+# PHP dependencies
+/vendor/
+
+# Uploaded files
+uploads/
+storage/uploads/
+
+# Temporary files
+*.log
+
+
+# User-uploaded content
+api/uploads/
+api/storage/
+uploads/
+storage/uploads/
+
+# Environment and backup files
+*.bak
+*.backup
+*.tmp

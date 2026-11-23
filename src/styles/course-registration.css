@@ -1,0 +1,444 @@
+.registration-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10001;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  overflow-y: auto;
+  background: rgba(4, 14, 35, 0.82);
+  backdrop-filter: blur(8px);
+  animation: registrationFadeIn 0.2s ease;
+}
+
+.registration-modal {
+  position: relative;
+  width: 100%;
+  max-width: 650px;
+  max-height: calc(100vh - 40px);
+  padding: 35px;
+  overflow-y: auto;
+  background: #ffffff;
+  border: 1px solid #e8edf5;
+  border-radius: 19px;
+  box-shadow: 0 25px 90px rgba(0, 0, 0, 0.28);
+  animation: registrationSlideIn 0.25s ease;
+}
+
+.registration-close {
+  position: absolute;
+  top: 19px;
+  right: 19px;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #64728a;
+  background: #f1f4f8;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.registration-close:hover {
+  color: #10203f;
+  background: #e6ebf3;
+}
+
+.registration-header {
+  padding-right: 35px;
+}
+
+.registration-eyebrow {
+  display: block;
+  color: #3867f5;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.7px;
+}
+
+.registration-header h2,
+.registration-success h2 {
+  margin: 9px 0 9px;
+  color: #10203f;
+  font-family: 'Manrope', sans-serif;
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.registration-header > p,
+.registration-success > p {
+  margin: 0;
+  color: #6b7890;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.registration-course-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin: 23px 0;
+  padding: 17px;
+  background: #f4f7ff;
+  border: 1px solid #e5ebfb;
+  border-radius: 11px;
+}
+
+.registration-course-summary > div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.registration-course-summary span {
+  color: #7d8aa1;
+  font-size: 11px;
+}
+
+.registration-course-summary strong {
+  color: #10203f;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.registration-course-summary .registration-course-price {
+  align-items: flex-end;
+}
+
+.registration-course-price strong {
+  color: #315ce0;
+  font-family: 'Manrope', sans-serif;
+  font-size: 18px;
+}
+
+.registration-error {
+  margin-bottom: 18px;
+  padding: 13px 15px;
+  color: #a52d36;
+  background: #fff0f0;
+  border: 1px solid #f3d0d2;
+  border-radius: 8px;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.registration-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 17px 15px;
+}
+
+.registration-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.registration-field.registration-full {
+  grid-column: 1 / -1;
+}
+
+.registration-field label {
+  color: #283852;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.registration-field input,
+.registration-field select,
+.registration-field textarea {
+  width: 100%;
+  min-width: 0;
+  padding: 12px 13px;
+  color: #24334d;
+  background: #ffffff;
+  border: 1px solid #dce3ee;
+  border-radius: 8px;
+  outline: none;
+  font-family: inherit;
+  font-size: 13px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.registration-field input,
+.registration-field select {
+  min-height: 44px;
+}
+
+.registration-field textarea {
+  min-height: 100px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.registration-field input::placeholder,
+.registration-field textarea::placeholder {
+  color: #a1acbd;
+}
+
+.registration-field input:focus,
+.registration-field select:focus,
+.registration-field textarea:focus {
+  border-color: #3867f5;
+  box-shadow: 0 0 0 3px rgba(56, 103, 245, 0.1);
+}
+
+.registration-privacy {
+  margin: 19px 0;
+  color: #8490a3;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.registration-honeypot {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.registration-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding-top: 17px;
+  border-top: 1px solid #edf0f5;
+}
+
+.registration-back,
+.registration-submit {
+  min-height: 47px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.registration-back {
+  color: #53627a;
+  background: #f0f3f8;
+  border: 1px solid #e5eaf1;
+}
+
+.registration-back:hover {
+  background: #e6ebf3;
+}
+
+.registration-submit {
+  color: #ffffff;
+  background: #3867f5;
+  border: 1px solid #3867f5;
+}
+
+.registration-submit:hover:not(:disabled) {
+  background: #244ed0;
+  transform: translateY(-1px);
+}
+
+.registration-submit:disabled,
+.registration-back:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.registration-spinner {
+  animation: registrationSpin 1s linear infinite;
+}
+
+/* Success screen */
+
+.registration-success {
+  padding: 16px 0 0;
+  text-align: center;
+}
+
+.registration-success-icon {
+  width: 75px;
+  height: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 20px;
+  color: #21885a;
+  background: #e8f8ef;
+  border-radius: 50%;
+}
+
+.registration-success h2 {
+  font-size: 25px;
+}
+
+.registration-success > p {
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+.registration-reference {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin: 25px 0;
+  padding: 19px;
+  background: #f3f6fc;
+  border: 1px dashed #cbd6ea;
+  border-radius: 11px;
+}
+
+.registration-reference span {
+  color: #7c8aa2;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+}
+
+.registration-reference strong {
+  color: #244ed0;
+  font-family: 'Manrope', sans-serif;
+  font-size: 21px;
+  letter-spacing: 1px;
+}
+
+.registration-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: 24px;
+  padding: 5px 17px;
+  background: #ffffff;
+  border: 1px solid #e7ebf2;
+  border-radius: 10px;
+  text-align: left;
+}
+
+.registration-summary > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 12px 0;
+  border-bottom: 1px solid #edf0f5;
+}
+
+.registration-summary > div:last-child {
+  border-bottom: none;
+}
+
+.registration-summary span {
+  color: #8792a5;
+  font-size: 12px;
+}
+
+.registration-summary strong {
+  color: #24334d;
+  font-size: 12px;
+  text-align: right;
+}
+
+.registration-summary .registration-pending {
+  color: #b7791f;
+}
+
+.registration-success .registration-submit {
+  width: 100%;
+}
+
+@keyframes registrationFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes registrationSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes registrationSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive */
+
+@media (max-width: 600px) {
+  .registration-overlay {
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .registration-modal {
+    max-height: calc(100vh - 20px);
+    margin: auto 0;
+    padding: 25px 18px;
+    border-radius: 14px;
+  }
+
+  .registration-header h2,
+  .registration-success h2 {
+    font-size: 22px;
+  }
+
+  .registration-form-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .registration-field.registration-full {
+    grid-column: auto;
+  }
+
+  .registration-actions {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .registration-back,
+  .registration-submit {
+    width: 100%;
+  }
+
+  .registration-course-summary {
+    align-items: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .registration-overlay,
+  .registration-modal {
+    animation: none;
+  }
+
+  .registration-submit,
+  .registration-field input,
+  .registration-field select,
+  .registration-field textarea {
+    transition: none;
+  }
+}

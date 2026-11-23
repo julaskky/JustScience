@@ -1,0 +1,15 @@
+
+Options -Indexes
+
+<IfModule mod_authz_core.c>
+    <FilesMatch "^(?!index\.php$|services\.php$|enrollments\.php$|admin-auth\.php$|admin-enrollments\.php$|admin-courses\.php$).+">
+        Require all denied
+    </FilesMatch>
+</IfModule>
+
+<IfModule !mod_authz_core.c>
+    <FilesMatch "^(?!index\.php$|services\.php$|enrollments\.php$|admin-auth\.php$|admin-enrollments\.php$|admin-courses\.php$).+">
+        Order Allow,Deny
+        Deny from all
+    </FilesMatch>
+</IfModule>
